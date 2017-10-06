@@ -49,30 +49,44 @@ namespace Lucky_Numbers
                     Console.WriteLine("Lucky Number: " + luckyNumber);
                 }
 
-                int numberMatches = 0;
+                double numberMatches = 0;
 
-                for (int i = 0; i < userNumbers.Length; i++)
+                //for (int i = userNumbers[0]; i <userNumbers.Length; i++)
+                //{
+                //    for (int j = luckyNumbers[0]; j < luckyNumbers.Length; j++)
+                //    {
+                //        if (userNumbers[i] == luckyNumbers[j])
+                //        {
+                //            numberMatches++;
+                //        }
+                //    }
+                //}
+
+                foreach (int userNumber in userNumbers)
                 {
-                    for (int j = 0; j < luckyNumbers.Length; j++)
+                    foreach (int luckyNumber in luckyNumbers)
                     {
-                        if (userNumbers[i] == luckyNumbers[j])
+                        if (userNumber == luckyNumber)
                         {
                             numberMatches++;
+                            break;
                         }
+                        
                     }
-
                 }
 
-                Console.WriteLine("You guessed " + numberMatches + " correctly!");
-                int jackpotTotal = 750000;
-                double userWinnings = (numberMatches / 6) * jackpotTotal;
+                Console.WriteLine(numberMatches);
 
-                Console.WriteLine("You won " + userWinnings + "!");
+                Console.WriteLine("You guessed " + numberMatches + " correctly!");
+                double jackpotTotal = 750000;
+                double userWinnings = (jackpotTotal) * (numberMatches * .16);
+
+                Console.WriteLine("You won $" + userWinnings + "!");
 
                 Console.WriteLine("Do you want to play again? (YES/NO)");
-                string playAgain = Console.ReadLine().ToUpper();
+                playAgain = Console.ReadLine().ToUpper();
 
-            } while (playAgain == "Yes");
+            } while (playAgain == "YES");
 
             Console.WriteLine("Thanks for playing!");
 
@@ -92,4 +106,4 @@ namespace Lucky_Numbers
 
     }
 }
-}
+
