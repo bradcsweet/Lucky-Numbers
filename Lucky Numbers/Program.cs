@@ -24,12 +24,11 @@ namespace Lucky_Numbers
                 {
                     Console.WriteLine("Now choose the highest number in the number range");
                     highRange = int.Parse(Console.ReadLine());
-
                 } while (highRange <= lowRange + 4);
-                
-                Console.WriteLine("Guess six unique numbers in that range that you think are the LUCKY NUMBERS");
 
                 //user guesses
+                Console.WriteLine("Guess six unique numbers in that range that you think are the LUCKY NUMBERS");
+
                 int[] userNumbers = new int[6];
                 for (int i = 0; i < userNumbers.Length; i++)
                 {
@@ -43,7 +42,7 @@ namespace Lucky_Numbers
                     userNumbers[i] = userNumber;
                 }
                 
-                //random number generator with no duplicate numbers
+                //random number generator with no duplicate numbers //stretch
                 int[] luckyNumbers = new int[6];
                 Random randoNumber = new Random();
                 for (int i = 0; i < luckyNumbers.Length; i++)
